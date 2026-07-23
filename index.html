@@ -16,7 +16,7 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:'JetBrains Mono','Cascadia Code',Consolas,monospace;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px}
+  body{font-family:'JetBrains Mono','Cascadia Code',Consolas,monospace;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;overflow-x:hidden}
   a{color:var(--accent);text-decoration:none}
   ::selection{background:rgba(74,222,128,.25)}
 
@@ -42,6 +42,13 @@
   nav ul a:hover{color:var(--accent);background:rgba(74,222,128,.06)}
   .lang-btn{background:transparent;border:1px solid var(--line2);color:var(--text);padding:6px 14px;border-radius:8px;cursor:pointer;font-size:.8rem;font-weight:700;font-family:inherit;margin-left:10px;transition:border-color .2s,background .2s,color .2s}
   .lang-btn:hover{border-color:var(--accent);color:var(--accent);background:rgba(74,222,128,.06)}
+  .menu-btn{display:none;background:transparent;border:1px solid var(--line2);color:var(--text);border-radius:8px;padding:7px 9px;cursor:pointer;margin-left:8px;align-items:center}
+  .menu-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+  .mmenu{display:none;flex-direction:column;border-top:1px solid var(--line);background:rgba(10,14,20,.98);padding:6px 24px 14px}
+  .mmenu.open{display:flex}
+  .mmenu a{padding:13px 0;color:var(--muted);font-size:.95rem;font-weight:500;border-bottom:1px solid var(--line)}
+  .mmenu a:last-child{border-bottom:none}
+  .mmenu a:active{color:var(--accent)}
 
   /* ---------- Hero ---------- */
   header{position:relative;padding:120px 0 100px;overflow:hidden}
@@ -144,7 +151,7 @@
 
   footer{padding:34px 0;color:var(--muted);font-size:.8rem;text-align:center;border-top:1px solid var(--line)}
   footer b{color:var(--accent);font-weight:400}
-  @media(max-width:640px){nav ul li.hide-m{display:none}header{padding:90px 0 76px}section{padding:72px 0}}
+  @media(max-width:640px){nav ul li.hide-m{display:none}.menu-btn{display:inline-flex}header{padding:90px 0 76px}section{padding:72px 0}}
 </style>
 </head>
 <body>
@@ -158,7 +165,14 @@
       <li class="hide-m"><a href="#sobre-mi"><span class="es">Sobre mí</span><span class="en">About</span></a></li>
       <li class="hide-m"><a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
       <li><button class="lang-btn" onclick="toggleLang()"><span class="es">EN</span><span class="en">ES</span></button></li>
+      <li><button class="menu-btn" aria-label="Menú" onclick="toggleMenu()"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></li>
     </ul>
+  </div>
+  <div class="mmenu" id="mmenu">
+    <a href="#proyectos"><span class="es">Proyectos</span><span class="en">Projects</span></a>
+    <a href="#servicios"><span class="es">Servicios</span><span class="en">Services</span></a>
+    <a href="#sobre-mi"><span class="es">Sobre mí</span><span class="en">About</span></a>
+    <a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a>
   </div>
 </nav>
 
@@ -392,6 +406,12 @@
     document.body.classList.toggle('lang-en');
     document.documentElement.lang = document.body.classList.contains('lang-en') ? 'en' : 'es';
   }
+  function toggleMenu(){
+    document.getElementById('mmenu').classList.toggle('open');
+  }
+  document.querySelectorAll('.mmenu a').forEach(a => a.addEventListener('click', () => {
+    document.getElementById('mmenu').classList.remove('open');
+  }));
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
   }, { threshold: 0.12 });

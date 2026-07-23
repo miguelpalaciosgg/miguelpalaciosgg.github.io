@@ -29,6 +29,10 @@
   .brand svg{width:26px;height:26px;stroke:var(--teal);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
   .brand .n{font-weight:800;font-size:.95rem}
   .brand .n b{color:var(--teal)}
+  .mnav-btn{display:none;align-items:center;gap:8px;margin-left:auto;background:var(--panel2);border:1px solid var(--line2);color:var(--text);padding:8px 14px;border-radius:9px;font:inherit;font-size:.8rem;font-weight:600;cursor:pointer;transition:border-color .2s,color .2s}
+  .mnav-btn svg{width:14px;height:14px;stroke:var(--teal);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s}
+  .mnav-btn.open{border-color:var(--teal);color:var(--teal)}
+  .mnav-btn.open svg{transform:rotate(180deg)}
   aside nav{margin-top:14px;display:flex;flex-direction:column}
   aside nav a{display:flex;align-items:center;gap:11px;padding:11px 20px;color:var(--muted);font-size:.84rem;font-weight:500;border-left:3px solid transparent;transition:color .2s,background .2s;cursor:pointer}
   aside nav a svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
@@ -112,12 +116,12 @@
   /* ---------- Mobile ---------- */
   @media(max-width:820px){
     .app{flex-direction:column}
-    aside{width:100%;padding:14px 0 0;border-right:none;border-bottom:1px solid var(--line)}
-    .brand{padding:0 16px 12px;border-bottom:none}
-    aside nav{flex-direction:row;overflow-x:auto;margin-top:0;border-top:1px solid var(--line);-webkit-overflow-scrolling:touch;scrollbar-width:none}
-    aside nav::-webkit-scrollbar{display:none}
-    aside nav a{flex-shrink:0;border-left:none;border-bottom:3px solid transparent;padding:12px 14px;white-space:nowrap}
-    aside nav a.on{border-left:none;border-bottom-color:var(--teal)}
+    aside{width:100%;padding:12px 0;border-right:none;border-bottom:1px solid var(--line)}
+    .brand{padding:0 14px;border-bottom:none}
+    .mnav-btn{display:inline-flex}
+    aside nav{display:none;flex-direction:column;margin-top:12px;border-top:1px solid var(--line);padding-top:4px}
+    aside nav.open{display:flex}
+    aside nav a{padding:13px 18px}
     main{padding:18px 14px}
     .top{margin-bottom:18px}
     .kpis{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
@@ -144,6 +148,7 @@
     <div class="brand">
       <svg viewBox="0 0 24 24"><path d="M2 12c2-2.5 4-2.5 6 0s4 2.5 6 0 4-2.5 6 0"/><path d="M2 18c2-2.5 4-2.5 6 0s4 2.5 6 0 4-2.5 6 0"/><path d="M12 3l3 4.5H9L12 3z"/></svg>
       <div class="n">Aqua<b>Sports</b> CRM</div>
+      <button class="mnav-btn" id="mnavBtn" aria-label="Cambiar de sección"><span id="mnavLabel">Panel</span><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></button>
     </div>
     <nav>
       <a class="on" data-view="panel"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Panel</a>
@@ -340,12 +345,22 @@
 
 <script>
   const links = document.querySelectorAll('aside nav a[data-view]');
+  const nav = document.querySelector('aside nav');
+  const mnavBtn = document.getElementById('mnavBtn');
+  const mnavLabel = document.getElementById('mnavLabel');
   links.forEach(l => l.addEventListener('click', () => {
     links.forEach(x => x.classList.remove('on'));
     l.classList.add('on');
     document.querySelectorAll('.view').forEach(v => v.classList.remove('on'));
     document.getElementById('v-' + l.dataset.view).classList.add('on');
+    mnavLabel.textContent = l.textContent.trim();
+    nav.classList.remove('open');
+    mnavBtn.classList.remove('open');
   }));
+  mnavBtn.addEventListener('click', () => {
+    nav.classList.toggle('open');
+    mnavBtn.classList.toggle('open');
+  });
 </script>
 </body>
 </html>

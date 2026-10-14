@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Miguel Palacios — Desarrollo web, automatización e IA</title>
-<meta name="description" content="Ingeniero informático. Webs para negocios reales, automatización, IA y datos. Valencia.">
+<title>Miguel Palacios — Ingeniero de Software · Backend, IA y Automatización</title>
+<meta name="description" content="Ingeniero de software: backend en Python, automatización e IA generativa. Sistemas propios en producción. Valencia · remoto.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -23,7 +23,9 @@
   .en{display:none}
   body.lang-en .en{display:inline}
   body.lang-en .es{display:none}
-  div.en,p.en,li.en{display:none}
+  div.en,p.en,li.en,a.en{display:none}
+  body.lang-en a.en{display:inline-flex}
+  body.lang-en a.es{display:none}
   body.lang-en div.en{display:block}
   body.lang-en p.en{display:block}
   body.lang-en li.en{display:list-item}
@@ -161,16 +163,16 @@
     <div class="logo">miguel<b>palacios</b></div>
     <ul>
       <li class="hide-m"><a href="#proyectos"><span class="es">Proyectos</span><span class="en">Projects</span></a></li>
-      <li class="hide-m"><a href="#servicios"><span class="es">Servicios</span><span class="en">Services</span></a></li>
+      <li class="hide-m"><a href="#experiencia"><span class="es">Experiencia</span><span class="en">Experience</span></a></li>
       <li class="hide-m"><a href="#sobre-mi"><span class="es">Sobre mí</span><span class="en">About</span></a></li>
       <li class="hide-m"><a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
-      <li><button class="lang-btn" onclick="toggleLang()"><span class="es">EN</span><span class="en">ES</span></button></li>
+      <li class="hide-m"><a href="https://github.com/miguelpalaciosgg" target="_blank" rel="noopener">GitHub</a></li><li class="hide-m"><a href="https://www.linkedin.com/in/miguelpalacios" target="_blank" rel="noopener">LinkedIn</a></li><li><button class="lang-btn" onclick="toggleLang()"><span class="es">EN</span><span class="en">ES</span></button></li>
       <li><button class="menu-btn" aria-label="Menú" onclick="toggleMenu()"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></li>
     </ul>
   </div>
   <div class="mmenu" id="mmenu">
     <a href="#proyectos"><span class="es">Proyectos</span><span class="en">Projects</span></a>
-    <a href="#servicios"><span class="es">Servicios</span><span class="en">Services</span></a>
+    <a href="#experiencia"><span class="es">Experiencia</span><span class="en">Experience</span></a>
     <a href="#sobre-mi"><span class="es">Sobre mí</span><span class="en">About</span></a>
     <a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a>
   </div>
@@ -182,19 +184,21 @@
   <div class="wrap">
     <div class="prompt h-in d1"><span class="u">miguel</span>@<span class="p">valencia</span>:~$ whoami</div>
     <h1 class="h-in d2">
-      <span class="es">Webs, automatización e <span class="grad">IA</span> para negocios reales</span><span class="en">Websites, automation &amp; <span class="grad">AI</span> for real businesses</span><span class="caret"></span>
+      <span class="es">Ingeniero de software: backend, <span class="grad">IA</span> y sistemas que trabajan solos</span><span class="en">Software engineer: backend, <span class="grad">AI</span> and systems that run themselves</span><span class="caret"></span>
     </h1>
-    <p class="sub h-in d3 es">Desarrollo webs que venden, sistemas que trabajan solos y soluciones de datos e IA. Del pequeño negocio local a la automatización en la nube.</p>
-    <p class="sub h-in d3 en">I build websites that sell, systems that run themselves, and data &amp; AI solutions. From the small local business to cloud automation.</p>
+    <p class="sub h-in d3 es">Python, SQL y nube. Cuatro años en consultoría y administración de sistemas, y una obsesión por automatizar: diseño, construyo y opero en producción plataformas con IA generativa que generan contenido, atienden clientes y cobran solas.</p>
+    <p class="sub h-in d3 en">Python, SQL and cloud. Four years in consulting and systems administration, and an obsession with automation: I design, build and run in production generative-AI platforms that create content, serve customers and take payments on their own.</p>
     <div class="tags h-in d4">
       <span class="tag"><span class="es">Ingeniero Informático (UPV)</span><span class="en">Computer Engineer (UPV)</span></span>
-      <span class="tag"><span class="es">Instructor de buceo</span><span class="en">Diving instructor</span></span>
-      <span class="tag">IBM Maximo</span>
-      <span class="tag"><span class="es">Data &amp; IA</span><span class="en">Data &amp; AI</span></span>
+      <span class="tag">Python · SQL · TypeScript</span>
+      <span class="tag">Google Cloud · Serverless · Docker</span>
+      <span class="tag"><span class="es">LLM · Agentes · Automatización</span><span class="en">LLMs · Agents · Automation</span></span>
+      <span class="tag">Valencia · <span class="es">Remoto</span><span class="en">Remote</span></span>
     </div>
     <div class="hero-cta h-in d5">
       <a class="btn btn-p" href="#proyectos"><span class="es">Ver proyectos</span><span class="en">See projects</span></a>
-      <a class="btn btn-s" href="#contacto"><span class="es">Contactar</span><span class="en">Get in touch</span></a>
+      <a class="btn btn-s es" href="cv/CV_Miguel_Palacios_ES.pdf" target="_blank">Descargar CV</a><a class="btn btn-s en" href="cv/CV_Miguel_Palacios_EN.pdf" target="_blank">Download CV</a>
+      <a class="btn btn-s" href="https://github.com/miguelpalaciosgg" target="_blank" rel="noopener">GitHub →</a>
     </div>
   </div>
 </header>
@@ -203,9 +207,49 @@
   <div class="wrap">
     <div class="sec-kicker reveal"><span class="es">trabajo real</span><span class="en">real work</span></div>
     <h2 class="reveal"><span class="es">Proyectos</span><span class="en">Projects</span></h2>
-    <p class="lead reveal es">Webs publicadas y en producción, y sistemas propios de automatización. Todo real, todo funcionando.</p>
-    <p class="lead reveal en">Live, in-production websites and my own automation systems. All real, all running.</p>
+    <p class="lead reveal es">Sistemas propios en producción y webs publicadas. Todo real, todo funcionando. El código de lo que es público está en GitHub; el resto se enseña en una llamada.</p>
+    <p class="lead reveal en">My own systems in production and live websites. All real, all running. Public code is on GitHub; the rest I can walk you through on a call.</p>
     <div class="grid">
+
+      <div class="card reveal">
+        <div class="thumb t-tube"><div class="dots"><i></i><i></i><i></i></div><div class="site">TubeFarmer</div></div>
+        <div class="body">
+          <h3><span class="es">Fábrica autónoma de vídeo con IA</span><span class="en">Autonomous AI video factory</span></h3>
+          <p class="es">Plataforma que guioniza, ilustra, locuta, monta, sube y programa vídeos en seis canales de YouTube sin intervención humana. Panel web, cola de trabajos y worker serverless; coste de infraestructura inferior a 5 $/mes.</p>
+          <p class="en">Platform that scripts, illustrates, voices, edits, uploads and schedules videos to six YouTube channels with zero human input. Web dashboard, job queue and serverless worker; infrastructure under $5/month.</p>
+          <div class="stack"><span>Python</span><span>Next.js</span><span>PostgreSQL</span><span>Google Cloud · Serverless</span><span>LLM · <span class="es">imagen · voz</span><span class="en">image · voice</span></span></div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="thumb" style="background:linear-gradient(135deg,#0c4a6e,#0284c7)"><div class="dots"><i></i><i></i><i></i></div><div class="site">ERP · SaaS</div></div>
+        <div class="body">
+          <h3><span class="es">ERP para centros de buceo → SaaS multiempresa</span><span class="en">Dive-centre ERP → multi-tenant SaaS</span></h3>
+          <p class="es">Gestión de reservas, clientes, cursos y cobros, desplegado en la nube para un centro real (programa Kit Digital, auditoría superada). Evolucionado a una versión SaaS multiempresa con pasarela de pago y entorno de demo.</p>
+          <p class="en">Bookings, customers, courses and payments, deployed in the cloud for a real dive centre (Spanish Kit Digital programme, audit passed). Evolved into a multi-tenant SaaS version with payment gateway and demo environment.</p>
+          <div class="stack"><span>Vue</span><span>Node.js</span><span>PostgreSQL</span><span>Google Cloud</span><span><span class="es">Pasarela de pago</span><span class="en">Payment gateway</span></span></div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="thumb" style="background:linear-gradient(135deg,#14532d,#16a34a)"><div class="dots"><i></i><i></i><i></i></div><div class="site">WhatsApp AI</div></div>
+        <div class="body">
+          <h3><span class="es">Asistente de WhatsApp con IA</span><span class="en">WhatsApp AI assistant</span></h3>
+          <p class="es">Agente conversacional sobre la API oficial de WhatsApp con memoria por cliente: responde dudas, cualifica el interés y lleva al cliente a la reserva online. Serverless, escala a cero.</p>
+          <p class="en">Conversational agent on the official WhatsApp API with per-customer memory: answers questions, qualifies interest and routes the customer to online booking. Serverless, scales to zero.</p>
+          <div class="stack"><span>Python</span><span>LLM</span><span>WhatsApp API</span><span>Google Cloud · Serverless</span></div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="thumb" style="background:linear-gradient(135deg,#3f3f46,#a16207)"><div class="dots"><i></i><i></i><i></i></div><div class="site">Quant bots</div></div>
+        <div class="body">
+          <h3><span class="es">Bots de datos y simulación</span><span class="en">Data &amp; simulation bots</span></h3>
+          <p class="es">Simuladores de trading (señales técnicas sobre datos de mercado) y de value betting, con ejecución programada, gestión de riesgo y reporting automático. Sin dinero real: el objetivo es medir antes de decidir.</p>
+          <p class="en">Trading (technical signals on market data) and value-betting simulators with scheduled execution, risk management and automated reporting. No real money: the goal is to measure before deciding.</p>
+          <div class="stack"><span>Python</span><span>pandas</span><span>APIs</span><span><span class="es">Tareas programadas</span><span class="en">Scheduled jobs</span></span></div>
+        </div>
+      </div>
 
       <div class="card reveal">
         <div class="thumb t-crm"><div class="dots"><i></i><i></i><i></i></div><div class="site">CRM AquaSports</div></div>
@@ -274,26 +318,6 @@
       </div>
 
       <div class="card reveal">
-        <div class="thumb t-bot"><div class="dots"><i></i><i></i><i></i></div><div class="site">Chatbot IA</div></div>
-        <div class="body">
-          <h3><span class="es">Chatbot IA · RevolutionDive</span><span class="en">AI chatbot · RevolutionDive</span></h3>
-          <p class="es">Asistente conversacional para el centro de buceo: atendía a los clientes con toda la información necesaria —cursos, inmersiones, precios, requisitos y horarios— las 24 horas, liberando al equipo de las consultas repetitivas.</p>
-          <p class="en">Conversational assistant for the dive center: served customers with all the information they needed — courses, dives, pricing, requirements and schedules — around the clock, freeing the team from repetitive queries.</p>
-          <div class="stack"><span>LLM</span><span>Python</span><span>API</span></div>
-        </div>
-      </div>
-
-      <div class="card reveal">
-        <div class="thumb t-tube"><div class="dots"><i></i><i></i><i></i></div><div class="site">TubeFarmer</div></div>
-        <div class="body">
-          <h3><span class="es">Fábrica autónoma de vídeo con IA</span><span class="en">Autonomous AI video factory</span></h3>
-          <p class="es">Sistema que guioniza, ilustra, locuta, monta y publica vídeos en varios canales de YouTube sin intervención humana, corriendo 24/7 en la nube.</p>
-          <p class="en">A system that scripts, illustrates, voices, edits and publishes videos to several YouTube channels with zero human input, running 24/7 in the cloud.</p>
-          <div class="stack"><span>Google Cloud Run</span><span>Supabase</span><span>Modal · SDXL</span><span>Gemini</span><span>Python</span></div>
-        </div>
-      </div>
-
-      <div class="card reveal">
         <div class="thumb t-clip"><div class="dots"><i></i><i></i><i></i></div><div class="site">Clipper</div></div>
         <div class="body">
           <h3><span class="es">Detector automático de clips</span><span class="en">Automatic clip detector</span></h3>
@@ -307,42 +331,36 @@
   </div>
 </section>
 
-<section id="servicios">
+<section id="experiencia">
   <div class="wrap">
-    <div class="sec-kicker reveal"><span class="es">qué ofrezco</span><span class="en">what I offer</span></div>
-    <h2 class="reveal"><span class="es">Servicios</span><span class="en">Services</span></h2>
-    <p class="lead reveal es">Lo que puedo hacer por tu negocio.</p>
-    <p class="lead reveal en">What I can do for your business.</p>
-    <div class="svc">
-      <div class="reveal">
-        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></div>
-        <h3><span class="es">Webs para negocios</span><span class="en">Business websites</span></h3>
-        <p class="es">Webs rápidas y multiidioma para restaurantes, centros de buceo y negocios locales. Diseño, dominio, hosting y mantenimiento.</p>
-        <p class="en">Fast, multilingual websites for restaurants, dive centers and local businesses. Design, domain, hosting and maintenance.</p>
+    <div class="sec-kicker reveal"><span class="es">trayectoria</span><span class="en">track record</span></div>
+    <h2 class="reveal"><span class="es">Experiencia</span><span class="en">Experience</span></h2>
+    <p class="lead reveal es">Cuatro años de experiencia profesional y ocho construyendo tecnología desde 2017.</p>
+    <p class="lead reveal en">Four years of professional experience and eight building technology since 2017.</p>
+    <div class="tl">
+      <div class="tl-item reveal">
+        <h3>Systems Administrator</h3>
+        <div class="where">Kyndryl · 2026 – <span class="es">actualidad</span><span class="en">present</span></div>
+        <p class="es">Administración de sistemas en entornos críticos, gestión de cambios, automatización en Python y SQL para explotación de datos.</p>
+        <p class="en">Systems administration in business-critical environments, change management, Python automation and SQL for data exploitation.</p>
       </div>
-      <div class="reveal">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M6 7h12l1.2 12.2a1 1 0 0 1-1 1.1H5.8a1 1 0 0 1-1-1.1L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg></div>
-        <h3><span class="es">Tiendas online</span><span class="en">Online stores</span></h3>
-        <p class="es">E-commerce con WooCommerce: catálogo, pagos, envíos y correo transaccional.</p>
-        <p class="en">WooCommerce e-commerce: catalog, payments, shipping and transactional email.</p>
+      <div class="tl-item reveal">
+        <h3>Consultant</h3>
+        <div class="where">Minsait (Indra) · 2023 – 2026</div>
+        <p class="es">Modelos de datos y optimización avanzada de SQL, automatización de despliegues y migraciones, administración técnica y funcional de IBM Maximo 8 y 9.</p>
+        <p class="en">Data modelling and advanced SQL optimisation, automated deployments and migrations, technical and functional administration of IBM Maximo 8 and 9.</p>
       </div>
-      <div class="reveal">
-        <div class="ico"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/></svg></div>
-        <h3><span class="es">Automatización e IA</span><span class="en">Automation &amp; AI</span></h3>
-        <p class="es">Sistemas que trabajan solos: generación de contenido, chatbots, procesos en la nube, integraciones con IA generativa.</p>
-        <p class="en">Systems that run themselves: content generation, chatbots, cloud pipelines, generative-AI integrations.</p>
+      <div class="tl-item reveal">
+        <h3><span class="es">Tech Lead &amp; Instructor de buceo</span><span class="en">Tech Lead &amp; Diving Instructor</span></h3>
+        <div class="where">Costa Blanca Dive / Revolution Dive · 2017 – <span class="es">actualidad · parcial</span><span class="en">present · part-time</span></div>
+        <p class="es">Digitalización completa del negocio: web, reservas y pagos online, chatbot con IA, SEO y publicidad. Liderazgo de grupos y venta directa.</p>
+        <p class="en">Full digitalisation of the business: website, online booking and payments, AI chatbot, SEO and advertising. Group leadership and direct sales.</p>
       </div>
-      <div class="reveal">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
-        <h3><span class="es">CRMs y datos</span><span class="en">CRMs &amp; data</span></h3>
-        <p class="es">Herramientas de gestión a medida: gastos, inventario, informes e integraciones con tus sistemas de reservas o venta.</p>
-        <p class="en">Custom management tools: costs, inventory, reporting and integrations with your booking or sales systems.</p>
-      </div>
-      <div class="reveal">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 11v3l4 1 11 5V4L7 9l-4 2z"/><path d="M7 15v5"/></svg></div>
-        <h3><span class="es">Publicidad online</span><span class="en">Online advertising</span></h3>
-        <p class="es">Campañas de Google Ads orientadas a resultados, con seguimiento de conversiones.</p>
-        <p class="en">Results-driven Google Ads campaigns with conversion tracking.</p>
+      <div class="tl-item reveal">
+        <h3><span class="es">Proyectos propios</span><span class="en">Own projects</span></h3>
+        <div class="where">2024 – <span class="es">actualidad · fuera del horario laboral</span><span class="en">present · outside working hours</span></div>
+        <p class="es">Todo lo de la sección de proyectos: diseño, desarrollo, despliegue y operación en producción.</p>
+        <p class="en">Everything in the projects section: design, development, deployment and operation in production.</p>
       </div>
     </div>
   </div>
@@ -360,9 +378,9 @@
         <div class="where">Universitat Politècnica de València (UPV)</div>
       </div>
       <div class="tl-item reveal">
-        <h3><span class="es">Experto en IBM Maximo</span><span class="en">IBM Maximo expert</span></h3>
-        <p class="es">Consultoría y desarrollo sobre IBM Maximo, plataforma líder de gestión de activos empresariales (EAM).</p>
-        <p class="en">Consulting and development on IBM Maximo, the leading enterprise asset management (EAM) platform.</p>
+        <h3><span class="es">Consultoría y sistemas</span><span class="en">Consulting &amp; systems</span></h3>
+        <p class="es">Cuatro años en consultoría y administración de sistemas: SQL avanzado, automatización, despliegues y plataformas empresariales (IBM Maximo).</p>
+        <p class="en">Four years in consulting and systems administration: advanced SQL, automation, deployments and enterprise platforms (IBM Maximo).</p>
       </div>
       <div class="tl-item reveal">
         <h3><span class="es">Data &amp; IA</span><span class="en">Data &amp; AI</span></h3>
@@ -382,8 +400,8 @@
   <div class="wrap">
     <div class="contact-box reveal">
       <h2><span class="es">¿Hablamos?</span><span class="en">Let's talk</span></h2>
-      <p class="es">Cuéntame qué necesita tu negocio y te propongo algo concreto.</p>
-      <p class="en">Tell me what your business needs and I'll come back with something concrete.</p>
+      <p class="es">Abierto a roles de ingeniería de software, backend e IA, en remoto o en Valencia. Escríbeme y hablamos.</p>
+      <p class="en">Open to software, backend and AI engineering roles, remote (CET) or in Valencia, Spain. Drop me a line.</p>
       <div class="c-lines">
         <a class="c-item" href="mailto:8miguelpalacios@gmail.com">
           <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
@@ -392,6 +410,14 @@
         <a class="c-item" href="tel:+34663191694">
           <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.8a16 16 0 0 0 6.2 6.2l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>
           663 19 16 94
+        </a>
+        <a class="c-item" href="https://www.linkedin.com/in/miguelpalacios" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a class="c-item" href="https://github.com/miguelpalaciosgg" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3.1-.3 6.4-1.5 6.4-7A5.4 5.4 0 0 0 20 4.8 5 5 0 0 0 19.9 1s-1.2-.3-3.9 1.5a13.4 13.4 0 0 0-7 0C6.3.7 5.1 1 5.1 1A5 5 0 0 0 5 4.8a5.4 5.4 0 0 0-1.5 3.8c0 5.5 3.3 6.7 6.4 7a3.4 3.4 0 0 0-.9 2.6V23"/></svg>
+          GitHub
         </a>
       </div>
     </div>

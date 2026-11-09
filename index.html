@@ -183,7 +183,7 @@ body[data-mode=home] .main,body[data-mode=home] .mswitch,body[data-mode=home] .c
 .eyebrow i{color:var(--cyan);font-style:normal}
 .cursor{display:inline-block;width:.6em;height:1em;margin-left:4px;background:var(--green);vertical-align:-2px;animation:blink 1.1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
-.landing h1{font-size:clamp(38px,7vw,58px);line-height:1.08;letter-spacing:-.02em;color:var(--hi);font-weight:700;margin-bottom:18px}
+.landing h1{font-size:clamp(33px,5.6vw,50px);line-height:1.08;letter-spacing:-.02em;color:var(--hi);font-weight:700;margin-bottom:18px}
 .lead{font-size:clamp(19px,2.6vw,23px);line-height:1.45;color:var(--hi);max-width:34em;margin-bottom:12px}
 .sub{color:var(--muted);max-width:40em;margin-bottom:28px}
 .cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
@@ -479,9 +479,9 @@ const S = {
 /* ================= portada legible ================= */
 const HOME = {
   es: {
-    hi: 'Hola, soy Miguel.',
-    lead: 'Creo programas que ahorran trabajo a las empresas: reservas, cobros online, automatizaciones e inteligencia artificial que funcionan en negocios reales.',
-    sub: 'Ingeniero informático en Valencia. Trabajo como administrador de sistemas en Kyndryl y, en mi tiempo libre, construyo mis propios productos.',
+    hi: 'Creo programas que ahorran trabajo a las empresas.',
+    lead: 'Reservas, cobros online, automatizaciones e inteligencia artificial que funcionan en negocios reales.',
+    sub: 'Soy Miguel Palacios, ingeniero informático en Valencia. Trabajo como administrador de sistemas en Kyndryl y, en mi tiempo libre, construyo mis propios productos.',
     cv: 'Ver mi CV', write: 'Escríbeme',
     stats: [['5 años', 'creando software para empresas'], ['Perfil híbrido', 'entre lo técnico y lo funcional'], ['Instructor de buceo', 'liderar grupos y explicar las cosas claras']],
     buildT: 'qué he construido', tech: 'Tecnologías',
@@ -503,9 +503,9 @@ const HOME = {
     modeC: '>_ consola', modeH: '← inicio',
   },
   en: {
-    hi: 'Hi, I\'m Miguel.',
-    lead: 'I build software that saves businesses work: bookings, online payments, automation and artificial intelligence running in real companies.',
-    sub: 'Computer engineer in Valencia, Spain. I work as a systems administrator at Kyndryl and, in my own time, I build my own products.',
+    hi: 'I build software that saves businesses work.',
+    lead: 'Bookings, online payments, automation and artificial intelligence running in real companies.',
+    sub: 'I\'m Miguel Palacios, a computer engineer in Valencia, Spain. I work as a systems administrator at Kyndryl and, in my own time, I build my own products.',
     cv: 'See my CV', write: 'Email me',
     stats: [['5 years', 'building software for businesses'], ['Hybrid profile', 'across the technical and the functional'], ['Dive instructor', 'leading groups and explaining things clearly']],
     buildT: 'what I\'ve built', tech: 'Technologies',
@@ -992,7 +992,7 @@ function renderHome() {
     <p class="lead">${esc(h.lead)}</p>
     <p class="sub">${esc(h.sub)}</p>
     <div class="cta">
-      <a class="bt pri" href="${esc(cvUrl())}" target="_blank" rel="noopener">${ICO.cv}${esc(h.cv)}${ICO.flecha}</a>
+      <a class="bt pri" href="${esc(lang === 'es' ? CV.pdfEs : CV.pdfEn)}" target="_blank" rel="noopener">${ICO.cv}${esc(h.cv)}${ICO.flecha}</a>
       <a class="bt mail" href="mailto:${EMAIL}">${ICO.mail}${esc(h.write)}</a>
       <a class="bt ic" href="${esc(LINKEDIN)}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">${ICO.linkedin}</a>
       <a class="bt ic" href="${esc(GITHUB)}" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">${ICO.github}</a>

@@ -5,27 +5,29 @@
 <style>
 @page{size:A4;margin:0}
 *{box-sizing:border-box}
-:root{--ink:#0b1220;--mut:#5b6472;--acc:#2563eb;--acc2:#06b6d4;--line:#e6e9ef;--soft:#f4f6fa}
+:root{--ink:#15231f;--mut:#5c6b65;--acc:#1f5c4d;--acc2:#c8a25a;--line:#dbe6e0;--soft:#f3f7f4;--tint:#e3efe9;--deep:#12332b}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 body{margin:0;font-family:Inter,"Segoe UI",Arial,sans-serif;color:var(--ink);font-size:8.7pt;line-height:1.32}
 a{color:inherit;text-decoration:none}
 .page{width:210mm;height:297mm;overflow:hidden;display:flex;flex-direction:column}
-header{padding:7mm 10mm 5mm;display:flex;align-items:center;gap:7mm;border-bottom:1px solid var(--line);background:linear-gradient(90deg,#fff 0%,var(--soft) 100%)}
-header img{width:27mm;height:27mm;border-radius:14px;object-fit:cover;box-shadow:0 0 0 2px #fff,0 0 0 4px var(--acc)}
+header{padding:7mm 10mm 5mm;display:flex;align-items:center;gap:7mm;color:#fff;background:linear-gradient(100deg,var(--deep) 0%,var(--acc) 100%)}
+header img{width:27mm;height:27mm;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px rgba(255,255,255,.9)}
 h1{font-size:22pt;font-weight:800;letter-spacing:-.5px;margin:0;line-height:1}
-.role{font-size:10.5pt;font-weight:600;color:var(--acc);margin:4px 0 6px}
-.contact{display:flex;flex-wrap:wrap;gap:3px 12px;font-size:8.4pt;color:var(--mut)}
+.role{font-size:10.5pt;font-weight:600;color:#d9c48f;margin:4px 0 6px}
+.contact{display:flex;flex-wrap:wrap;gap:3px 12px;font-size:8.4pt;color:#e0ebe5}
 .contact span::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--acc2);margin-right:5px;vertical-align:middle}
+.contact .lk{color:#fff;font-weight:600}
 .body{display:flex;flex:1;min-height:0}
-.main{flex:1;padding:5mm 7mm 4mm 10mm}
-.side{width:60mm;padding:5mm 10mm 4mm 0}
-h2{font-size:8.2pt;letter-spacing:2.2px;text-transform:uppercase;color:var(--mut);margin:8px 0 5px;display:flex;align-items:center;gap:6px}
+.main{flex:1;padding:5mm 6mm 4mm 10mm}
+.side{width:64mm;padding:5mm 8mm 4mm 6mm;background:var(--soft)}
+h2{font-size:8.2pt;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:var(--acc);margin:8px 0 5px;display:flex;align-items:center;gap:6px}
 h2::after{content:"";flex:1;height:1px;background:var(--line)}
 .main h2:first-child,.side h2:first-child{margin-top:0}
 .summary{margin:0;font-size:9pt}
 .job{margin-bottom:4px}
 .job .t{display:flex;justify-content:space-between;align-items:baseline}
 .job .t b{font-size:9.8pt;font-weight:700}
-.job .t span{font-size:8.2pt;color:var(--mut);white-space:nowrap;background:var(--soft);border-radius:99px;padding:0 7px}
+.job .t span{font-size:8.2pt;color:var(--deep);white-space:nowrap;background:var(--tint);border-radius:99px;padding:0 7px}
 .job .c{font-size:8.8pt;color:var(--acc);font-weight:600;margin:0 0 2px}
 .job ul{margin:0;padding-left:12px}
 .job li{margin:0 0 1px}
@@ -34,8 +36,8 @@ h2::after{content:"";flex:1;height:1px;background:var(--line)}
 .proj b{font-size:9.4pt;font-weight:700}
 .proj p{margin:0}
 .tags{display:flex;flex-wrap:wrap;gap:3px;margin-top:2px}
-.tag{font-size:7.6pt;font-weight:500;color:#1e3a8a;background:#e8efff;border-radius:99px;padding:1px 7px}
-.side .tag{color:var(--ink);background:var(--soft);border:1px solid var(--line)}
+.tag{font-size:7.6pt;font-weight:500;color:var(--deep);background:var(--tint);border-radius:99px;padding:1px 7px}
+.side .tag{color:var(--deep);background:#fff;border:1px solid #c9dcd2}
 .side p{margin:0 0 5px;font-size:8.5pt}
 .side small{color:var(--mut);display:block;font-size:8pt}
 .side .plain p{margin:0 0 2px}
@@ -56,10 +58,9 @@ h2::after{content:"";flex:1;height:1px;background:var(--line)}
 <span><a href="tel:+34663191694">+34 663 191 694</a></span>
 <span><a href="mailto:8miguelpalacios@gmail.com">8miguelpalacios@gmail.com</a></span>
 <span>Valencia, España</span>
-<span><a href="https://github.com/miguelpalaciosgg">github.com/miguelpalaciosgg</a></span>
-<span><a href="https://www.linkedin.com/in/miguelpalaciosgg/">linkedin.com/in/miguelpalaciosgg</a></span>
-<span><a href="https://miguelpalaciosgg.github.io">miguelpalaciosgg.github.io</a></span>
-</div>
+<i style="flex-basis:100%;height:0"></i>
+<span><a class="lk" href="https://www.linkedin.com/in/miguelpalaciosgg/">linkedin.com/in/miguelpalaciosgg</a></span>
+<span><a class="lk" href="https://github.com/miguelpalaciosgg">github.com/miguelpalaciosgg</a></span></div>
 </div>
 </header>
 <div class="body">
@@ -75,39 +76,39 @@ h2::after{content:"";flex:1;height:1px;background:var(--line)}
 <li>Uso diario de asistentes de IA para diagnóstico, generación de scripts y revisión de cambios, acortando tiempos de resolución.</li></ul></div>
 
 <div class="job"><div class="t"><b>Consultant</b><span>2023 – 2026</span></div><div class="c">Minsait (Indra)</div><ul>
-<li>Diseño de modelos de datos y optimización avanzada de SQL (PL/SQL) con mejoras drásticas de rendimiento y escalabilidad.</li>
-<li>Automatización de despliegues y migraciones entre entornos con Python, con procedimientos documentados y reproducibles que redujeron errores en los pasos a producción.</li>
+<li>Diseño de modelos de datos y optimización avanzada de SQL (PL/SQL) para mejorar el rendimiento y la escalabilidad.</li>
+<li>Automatización de despliegues y migraciones entre entornos con Python, con procedimientos documentados y reproducibles que redujeron errores humanos en los pasos a producción.</li>
 <li>Administración técnica y funcional de IBM Maximo 8 y 9: personalización, seguridad y accesos, scripts de automatización e informes BIRT.</li>
 <li>Interlocución directa con el cliente en Scrum: requisitos, estimación, seguimiento y entrega con equipos de cliente y proveedor.</li></ul></div>
 
-<div class="job"><div class="t"><b>Desarrollador de TI &amp; Instructor de buceo</b><span>2017 – actualidad</span></div><div class="c">Revolution Dive / Costa Blanca Dive · jornada completa 2017–2023, parcial desde 2023</div><ul>
-<li>Digitalización completa del negocio: web, reservas y pagos online, SEO y campañas de Google Ads orientadas a coste por adquisición.</li>
-<li>Chatbot de atención al cliente y captación de leads con IA; liderazgo de grupos y venta directa en español e inglés.</li></ul></div>
+<div class="job"><div class="t"><b>Desarrollador de TI &amp; Instructor de buceo</b><span>2017 – actualidad · parcial</span></div><div class="c">Revolution Dive</div><ul>
+<li>Web, reservas y pagos online, SEO y Google Ads; chatbot de atención al cliente con IA.</li>
+<li>Liderazgo de grupos y venta directa en español e inglés.</li></ul></div>
 
 <h2>Proyectos</h2>
 <div class="proj"><b>Plataforma autónoma de generación y publicación de vídeo</b>
-<p>Genera guion, imagen, voz y montaje con modelos de lenguaje y publica sin intervención manual; cientos de piezas publicadas. Serverless que escala a cero y coste por vídeo medido.</p>
+<p>Genera guion, imagen, voz y montaje con modelos de lenguaje y publica sin intervención manual; cientos de piezas publicadas. Serverless que escala a cero.</p>
 <div class="tags"><span class="tag">Python</span><span class="tag">LLMs</span><span class="tag">Imagen y voz</span><span class="tag">Google Cloud</span><span class="tag">Docker</span><span class="tag">Serverless</span></div></div>
 
 <div class="proj"><b>ERP SaaS multiempresa para centros de buceo</b>
-<p>Reservas, clientes y cobros con pasarela de pago integrada; asistente conversacional con IA sobre WhatsApp para atención y reservas.</p>
-<div class="tags"><span class="tag">TypeScript</span><span class="tag">Node.js</span><span class="tag">Next.js</span><span class="tag">PostgreSQL</span><span class="tag">Redsys</span><span class="tag">WhatsApp API</span></div></div>
+<p>Reservas, clientes y cobros con pasarela de pago integrada. Chatbot con IA en web y WhatsApp que atiende consultas, cualifica leads y gestiona reservas, con seguimiento de conversiones.</p>
+<div class="tags"><span class="tag">Vue 3</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">PostgreSQL</span><span class="tag">Redsys</span><span class="tag">WhatsApp API</span><span class="tag">LLMs</span></div></div>
 
-<div class="proj"><b>Chatbot de atención al cliente y captación de leads</b>
-<p>Resuelve dudas y cualifica leads, integrado con la web y el motor de reservas; seguimiento de conversiones.</p>
-<div class="tags"><span class="tag">Node.js</span><span class="tag">Google Cloud</span><span class="tag">Firebase</span><span class="tag">LLMs</span></div></div>
+<div class="proj"><b>Sistema multiagente de IA con supervisión humana</b>
+<p>Agentes especializados ejecutan a diario monitorización de servicios, análisis SEO, auditorías de seguridad y desarrollo, con niveles de autonomía definidos. Cada cambio pasa por revisión y las acciones sensibles requieren aprobación humana.</p>
+<div class="tags"><span class="tag">Agentes</span><span class="tag">LLMs</span><span class="tag">Orquestación</span><span class="tag">Human-in-the-loop</span><span class="tag">Git</span></div></div>
 
 <div class="proj"><b>Webs multilingües con reservas y pagos online</b>
 <p>Sitios en varios idiomas con motor de reservas, pasarela de pago y SEO; campañas de Google Ads medidas por coste de adquisición.</p>
-<div class="tags"><span class="tag">Vue</span><span class="tag">Next.js</span><span class="tag">WordPress</span><span class="tag">Redsys</span><span class="tag">SEO</span><span class="tag">Google Ads</span></div></div>
+<div class="tags"><span class="tag">Vue</span><span class="tag">Next.js</span><span class="tag">Redsys</span><span class="tag">SEO</span><span class="tag">Google Ads</span></div></div>
 </main>
 
 <aside class="side">
 <h2>Tecnologías</h2>
-<div class="g"><b>IA y LLMs</b><div class="tags"><span class="tag">Agentes</span><span class="tag">RAG</span><span class="tag">Prompt engineering</span><span class="tag">Tool calling</span><span class="tag">Imagen y voz</span><span class="tag">OpenAI</span><span class="tag">Google AI</span></div></div>
+<div class="g"><b>IA y LLMs</b><div class="tags"><span class="tag">LLMs</span><span class="tag">Agentes</span><span class="tag">RAG</span><span class="tag">Imagen y voz</span></div></div>
 <div class="g"><b>Backend y datos</b><div class="tags"><span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">Node.js</span><span class="tag">SQL / PL-SQL</span><span class="tag">PostgreSQL</span><span class="tag">APIs REST</span></div></div>
 <div class="g"><b>Cloud y operación</b><div class="tags"><span class="tag">Google Cloud</span><span class="tag">Cloud Run</span><span class="tag">Firebase</span><span class="tag">Serverless</span><span class="tag">Docker</span><span class="tag">Git</span><span class="tag">Linux</span></div></div>
-<div class="g"><b>Aplicaciones</b><div class="tags"><span class="tag">Next.js</span><span class="tag">Vue</span><span class="tag">WordPress</span><span class="tag">Redsys</span><span class="tag">SEO</span><span class="tag">Google Ads</span><span class="tag">IBM Maximo</span><span class="tag">BIRT</span></div></div>
+<div class="g"><b>Aplicaciones</b><div class="tags"><span class="tag">Next.js</span><span class="tag">Vue</span><span class="tag">Redsys</span><span class="tag">SEO</span><span class="tag">Google Ads</span><span class="tag">IBM Maximo</span><span class="tag">BIRT</span></div></div>
 
 <h2>Formación</h2>
 <p><b>Grado en Ingeniería Informática</b><small>Universitat Politècnica de València · 2017–2023</small></p>

@@ -187,10 +187,16 @@ body[data-mode=home] .main,body[data-mode=home] .mswitch,body[data-mode=home] .c
 .lead{font-size:clamp(19px,2.6vw,23px);line-height:1.45;color:var(--hi);max-width:34em;margin-bottom:12px}
 .sub{color:var(--muted);max-width:40em;margin-bottom:28px}
 .cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.bt{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:1px solid var(--line2);border-radius:6px;color:var(--hi);font:600 15px/1 Inter,'Segoe UI',system-ui,sans-serif;text-decoration:none;cursor:pointer}
-.bt:hover{border-color:var(--green)}
-.bt.pri{background:var(--green);border-color:var(--green);color:#06120a}
-.bt.pri:hover{background:#e8dab0;border-color:#e8dab0}
+.bt{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:0 20px;border:1px solid var(--line2);border-radius:12px;background:rgba(255,255,255,.035);color:var(--hi);font:600 15px/1 Inter,'Segoe UI',system-ui,sans-serif;text-decoration:none;cursor:pointer;transition:transform .15s ease,border-color .15s ease,background .15s ease,box-shadow .15s ease,color .15s ease}
+.bt:hover{border-color:var(--green);background:rgba(217,196,143,.1);transform:translateY(-1px)}
+.bt.pri{background:linear-gradient(180deg,#e8dab0,#d3bb7f);border-color:transparent;color:#12231d;font-weight:700;box-shadow:0 8px 22px rgba(217,196,143,.2)}
+.bt.pri:hover{background:linear-gradient(180deg,#f1e6c6,#dcc68e);border-color:transparent;box-shadow:0 10px 26px rgba(217,196,143,.3)}
+.bt.ic{width:48px;padding:0}
+.bt.ic:hover{color:var(--green)}
+.i{width:18px;height:18px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.i.lleno{fill:currentColor;stroke:none}
+.bt .flecha{transition:transform .15s ease}
+.bt:hover .flecha{transform:translateX(3px)}
 .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:48px 0 0}
 .stat{border-left:2px solid var(--green);padding:2px 0 2px 14px}
 .stat b{display:block;font:700 20px/1.25'JetBrains Mono',ui-monospace,Consolas,monospace;color:var(--hi)}
@@ -226,6 +232,8 @@ body[data-mode=home] .main,body[data-mode=home] .mswitch,body[data-mode=home] .c
 .tech button{font:inherit;color:var(--cyan);text-decoration:underline;text-underline-offset:2px;min-height:32px}
 @media (max-width:760px){
   .wrap{padding:36px 18px 48px}
+  .cta .bt.pri{flex:1 1 100%}
+  .cta .bt.mail{flex:1 1 0}
   .stats,.grid{grid-template-columns:minmax(0,1fr)}
   .stats{gap:16px;margin-top:36px}
   .landing h2{margin-top:48px}
@@ -962,6 +970,14 @@ $('#mView').addEventListener('click', () => setView('view'));
 
 /* ================= portada / consola ================= */
 let bootStarted = false;
+const svgI = (d, lleno) => `<svg class="i${lleno ? ' lleno' : ''}" viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
+const ICO = {
+  cv: svgI('<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>'),
+  mail: svgI('<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>'),
+  flecha: svgI('<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>').replace('class="i"', 'class="i flecha"'),
+  linkedin: svgI('<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>', true),
+  github: svgI('<path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>', true),
+};
 function renderHome() {
   const h = HOME[lang];
   const card = it => {
@@ -976,10 +992,10 @@ function renderHome() {
     <p class="lead">${esc(h.lead)}</p>
     <p class="sub">${esc(h.sub)}</p>
     <div class="cta">
-      <a class="bt pri" href="${esc(cvUrl())}" target="_blank" rel="noopener">${esc(h.cv)}</a>
-      <a class="bt" href="mailto:${EMAIL}">${esc(h.write)}</a>
-      <a class="bt" href="${esc(LINKEDIN)}" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="bt" href="${esc(GITHUB)}" target="_blank" rel="noopener">GitHub</a>
+      <a class="bt pri" href="${esc(cvUrl())}" target="_blank" rel="noopener">${ICO.cv}${esc(h.cv)}${ICO.flecha}</a>
+      <a class="bt mail" href="mailto:${EMAIL}">${ICO.mail}${esc(h.write)}</a>
+      <a class="bt ic" href="${esc(LINKEDIN)}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">${ICO.linkedin}</a>
+      <a class="bt ic" href="${esc(GITHUB)}" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">${ICO.github}</a>
     </div>
     <div class="stats">${h.stats.map(([a, b]) => `<div class="stat"><b>${esc(a)}</b><span>${esc(b)}</span></div>`).join('')}</div>
     <h2>${esc(h.buildT)}</h2>
@@ -988,7 +1004,7 @@ function renderHome() {
     <h2>${esc(h.pathT)}</h2>
     <ul class="path">${h.path.map(([w, r, o, d]) => `<li><span class="when">${esc(w)}</span><div><b>${esc(r)}</b> · <em>${esc(o)}</em><p>${esc(d)}</p></div></li>`).join('')}</ul>
     <section class="end"><h2>${esc(h.endT)}</h2><p>${esc(h.endD)}</p>
-      <div class="cta"><a class="bt pri" href="mailto:${EMAIL}">${EMAIL}</a><a class="bt" href="${esc(LINKEDIN)}" target="_blank" rel="noopener">LinkedIn</a></div></section>
+      <div class="cta"><a class="bt pri" href="mailto:${EMAIL}">${ICO.mail}${EMAIL}</a><a class="bt ic" href="${esc(LINKEDIN)}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">${ICO.linkedin}</a><a class="bt ic" href="${esc(GITHUB)}" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">${ICO.github}</a></div></section>
     <p class="tech">${esc(h.techA)} <button type="button" data-console>${esc(h.techB)}</button> ${esc(h.techC)}</p>
   </div>`;
   $('#modeBtn').textContent = document.body.dataset.mode === 'console' ? h.modeH : h.modeC;

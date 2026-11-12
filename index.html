@@ -295,7 +295,7 @@ body[data-mode=home] .main,body[data-mode=home] .mswitch,body[data-mode=home] .c
 const EMAIL = '8miguelpalacios@gmail.com';
 const GITHUB = 'https://github.com/miguelpalaciosgg';
 const LINKEDIN = 'https://www.linkedin.com/in/miguelpalaciosgg/';
-const CV = { es: 'cv/', en: 'cv/en.html', pdfEs: 'cv/CV_Miguel_Palacios_ES.pdf', pdfEn: 'cv/CV_Miguel_Palacios_EN.pdf' };
+const CV = { es: 'cv/', en: 'cv/en.html', pdfEs: 'cv/CV_Miguel_Palacios_2026.pdf', pdfEn: 'cv/CV_Miguel_Palacios_2026_EN.pdf' };
 
 const PROJECTS = [
   { id: 'booking', demo: 'https://miguelpalaciosgg.github.io/dive-booking-demo/',
@@ -645,7 +645,7 @@ const CMD = {
   cv() {
     openTab('cv');
     print(`<div class="kv"><span class="k">${t('cvWeb')}</span><span>${ext(CV.es, 'ES')} · ${ext(CV.en, 'EN')}</span>
-      <span class="k">${t('cvPdf')}</span><span>${ext(CV.pdfEs, 'CV_Miguel_Palacios_ES.pdf')} · ${ext(CV.pdfEn, 'CV_Miguel_Palacios_EN.pdf')}</span></div>
+      <span class="k">${t('cvPdf')}</span><span>${ext(CV.pdfEs, 'CV_Miguel_Palacios_2026.pdf')} · ${ext(CV.pdfEn, 'CV_Miguel_Palacios_2026_EN.pdf')}</span></div>
       <div class="mut" style="margin-top:4px">${t('opening')} CV ${t('inViewer')} →</div>`);
   },
   contact() {
@@ -674,7 +674,7 @@ const CMD = {
     const a = (args.filter(x => !x.startsWith('-'))[0] || '').replace(/\/$/, '');
     if (!a || a === '.' || a === '~') return print(`<span class="hi">about.txt</span>  <span class="hi">contact.txt</span>  <span class="k">cv/</span>  <span class="k">projects/</span>`);
     if (a === 'projects') return print(PID.map(i => runBtn('open ' + i, i)).join('  '));
-    if (a === 'cv') return print(`${ext(CV.es, 'index.html')}  ${ext(CV.en, 'en.html')}  ${ext(CV.pdfEs, 'CV_Miguel_Palacios_ES.pdf')}  ${ext(CV.pdfEn, 'CV_Miguel_Palacios_EN.pdf')}`);
+    if (a === 'cv') return print(`${ext(CV.es, 'index.html')}  ${ext(CV.en, 'en.html')}  ${ext(CV.pdfEs, 'CV_Miguel_Palacios_2026.pdf')}  ${ext(CV.pdfEn, 'CV_Miguel_Palacios_2026_EN.pdf')}`);
     print(`<span class="err">ls: ${esc(a)}: ${esc(t('noFile'))}</span>`);
   },
   cat(args, c0) {
